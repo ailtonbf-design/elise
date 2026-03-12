@@ -91,7 +91,7 @@ export default function App() {
             referrerPolicy="no-referrer"
           />
           {/* Heavy Dark Overlay (Crucial) */}
-          <div className="absolute inset-0 bg-zinc-950/90"></div>
+          <div className="absolute inset-0 bg-zinc-950/80"></div>
           {/* Gradients to blend smoothly with top and bottom sections */}
           <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-zinc-950 to-transparent"></div>
           <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-zinc-950 to-transparent"></div>
@@ -166,7 +166,7 @@ export default function App() {
             <Activity className="w-10 h-10 text-[#FF5A36] mb-4" />
             <div className="relative z-10">
               <h3 className="text-2xl font-bold text-white mb-2">Regulação Hormonal</h3>
-              <p className="text-zinc-400 text-lg">Otimização metabólica para parar de estocar gordura e transformar seu corpo em uma máquina de queima natural.</p>
+              <p className="text-zinc-400 text-lg">Otimização do seu metabolismo para que ele pare de estocar gordura e passe a trabalhar a seu favor.</p>
             </div>
           </motion.div>
 
@@ -176,13 +176,13 @@ export default function App() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="md:row-span-2 rounded-3xl bg-zinc-900/40 backdrop-blur-md border border-white/10 p-8 flex flex-col justify-between group overflow-hidden relative"
+            className="md:row-span-2 rounded-3xl bg-zinc-900/40 backdrop-blur-md border border-white/10 p-8 flex flex-col justify-center group overflow-hidden relative"
           >
             <div className="absolute inset-0 bg-gradient-to-b from-zinc-800/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <Brain className="w-10 h-10 text-zinc-300 mb-4" />
-            <div className="mt-auto relative z-10">
-              <h3 className="text-2xl font-bold text-white mb-2">Preparação da Mente</h3>
-              <p className="text-zinc-400">Construa uma rotina inabalável contra a autossabotagem. O emagrecimento começa nas suas decisões diárias.</p>
+            <div className="relative z-10 flex flex-col items-start">
+              <Brain className="w-10 h-10 text-zinc-300 mb-6" />
+              <h3 className="text-2xl font-bold text-white mb-3">Preparação da Mente</h3>
+              <p className="text-zinc-400 leading-relaxed">Construa uma rotina inabalável contra a autossabotagem. O emagrecimento começa nas suas decisões diárias.</p>
             </div>
           </motion.div>
 
@@ -236,12 +236,14 @@ export default function App() {
               viewport={{ once: true }}
               className="w-full md:w-1/2 relative"
             >
-              <div className="aspect-[4/5] rounded-3xl overflow-hidden relative border border-white/5">
+              <div className="aspect-[4/5] rounded-3xl overflow-hidden relative border border-white/5 bg-zinc-900/30">
+                {/* Subtle radial glow behind the image for depth */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-zinc-800/60 via-transparent to-transparent z-0"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent z-10"></div>
                 <img 
                   src="https://res.cloudinary.com/dapsovbs5/image/upload/v1773337741/Design_sem_nome_1_pnolln.webp" 
                   alt="Elise Personal Trainer" 
-                  className="w-full h-full object-cover object-center opacity-100"
+                  className="w-full h-full object-cover object-center opacity-100 relative z-0"
                   referrerPolicy="no-referrer"
                 />
               </div>
