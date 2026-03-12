@@ -81,62 +81,53 @@ export default function App() {
       </section>
 
       {/* 2. Pain Section */}
-      <section className="py-32 relative w-full max-w-7xl mx-auto px-6">
-        {/* Ambient Lights (Left and Right) */}
-        <motion.div 
-          animate={{ 
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.6, 0.3]
-          }}
-          transition={{ 
-            duration: 10, 
-            repeat: Infinity,
-            ease: "easeInOut" 
-          }}
-          className="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-[#FF5A36]/10 rounded-full blur-[120px] -z-10 pointer-events-none"
-        />
-        <motion.div 
-          animate={{ 
-            scale: [1, 1.15, 1],
-            opacity: [0.2, 0.5, 0.2]
-          }}
-          transition={{ 
-            duration: 12, 
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2
-          }}
-          className="absolute bottom-0 -right-32 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-[120px] -z-10 pointer-events-none"
-        />
+      <section className="relative w-full py-32 overflow-hidden">
+        {/* Atmospheric Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1541199249251-f713e6145474?q=80&w=2069&auto=format&fit=crop" 
+            alt="Exaustão mental" 
+            className="w-full h-full object-cover object-center grayscale opacity-80"
+            referrerPolicy="no-referrer"
+          />
+          {/* Heavy Dark Overlay (Crucial) */}
+          <div className="absolute inset-0 bg-zinc-950/90"></div>
+          {/* Gradients to blend smoothly with top and bottom sections */}
+          <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-zinc-950 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-zinc-950 to-transparent"></div>
+        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="lg:col-span-7 lg:col-start-1"
-          >
-            <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-tight text-zinc-100">
-              Você já sabotou seus resultados com a frase <br/>
-              <span className="text-zinc-500 italic font-serif font-light">"hoje eu mereço"?</span>
-            </h2>
-          </motion.div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="lg:col-span-7 lg:col-start-1"
+            >
+              <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-tight text-zinc-100 drop-shadow-lg">
+                Você já sabotou seus resultados com a frase <br/>
+                <span className="text-zinc-400 italic font-serif font-light">"hoje eu mereço"?</span>
+              </h2>
+            </motion.div>
 
-          <motion.div 
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="lg:col-span-5 lg:col-start-7 lg:mt-32"
-          >
-            <div className="p-8 rounded-3xl bg-zinc-900/50 backdrop-blur-xl border border-white/5 relative">
-              <div className="absolute -top-6 -left-4 text-7xl text-[#FF5A36] opacity-40 font-serif leading-none">"</div>
-              <p className="text-xl text-zinc-300 leading-relaxed font-light relative z-10">
-                O problema não é falta de força de vontade. É tentar emagrecer com a mente cansada e o corpo desregulado. 
-                <span className="block mt-6 text-white font-medium text-2xl">Onde o 'eu mereço' morre, seu verdadeiro resultado nasce.</span>
-              </p>
-            </div>
-          </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="lg:col-span-5 lg:col-start-7 lg:mt-32"
+            >
+              {/* Adjusted Card: Stronger backdrop-blur and slightly darker bg for readability */}
+              <div className="p-8 rounded-3xl bg-zinc-900/60 backdrop-blur-3xl border border-white/10 relative shadow-2xl">
+                <div className="absolute -top-6 -left-4 text-7xl text-[#FF5A36] opacity-40 font-serif leading-none">"</div>
+                <p className="text-xl text-zinc-300 leading-relaxed font-light relative z-10">
+                  O problema não é falta de força de vontade. É tentar emagrecer com a mente cansada e o corpo desregulado. 
+                  <span className="block mt-6 text-white font-medium text-2xl">Onde o 'eu mereço' morre, seu verdadeiro resultado nasce.</span>
+                </p>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
