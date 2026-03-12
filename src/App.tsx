@@ -82,7 +82,32 @@ export default function App() {
 
       {/* 2. Pain Section */}
       <section className="py-32 relative w-full max-w-7xl mx-auto px-6">
-        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-[#FF5A36]/10 rounded-full blur-[120px] pointer-events-none"></div>
+        {/* Ambient Lights (Left and Right) */}
+        <motion.div 
+          animate={{ 
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.6, 0.3]
+          }}
+          transition={{ 
+            duration: 10, 
+            repeat: Infinity,
+            ease: "easeInOut" 
+          }}
+          className="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-[#FF5A36]/10 rounded-full blur-[120px] -z-10 pointer-events-none"
+        />
+        <motion.div 
+          animate={{ 
+            scale: [1, 1.15, 1],
+            opacity: [0.2, 0.5, 0.2]
+          }}
+          transition={{ 
+            duration: 12, 
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2
+          }}
+          className="absolute bottom-0 -right-32 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-[120px] -z-10 pointer-events-none"
+        />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <motion.div 
@@ -98,9 +123,10 @@ export default function App() {
           </motion.div>
 
           <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="lg:col-span-5 lg:col-start-7 lg:mt-32"
           >
             <div className="p-8 rounded-3xl bg-zinc-900/50 backdrop-blur-xl border border-white/5 relative">
