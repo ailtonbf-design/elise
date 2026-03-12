@@ -299,7 +299,7 @@ export default function App() {
             viewport={{ once: true }}
             className="text-4xl md:text-6xl font-black tracking-tighter text-white mb-8"
           >
-            Chega de recomeçar toda segunda-feira.
+            Chega de tentar começar toda segunda-feira.
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
